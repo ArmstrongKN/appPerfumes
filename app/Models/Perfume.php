@@ -11,7 +11,7 @@ class Perfume extends Model
 
     protected $fillable = [
         'marca',
-        'fragamcia',
+        'fragancia',
         'mL',
         'descricao'
     ];
