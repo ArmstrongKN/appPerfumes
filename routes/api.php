@@ -25,22 +25,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // CRUD'S
 
 // Clientes
+route::get('/', function(){return response()->json(['Sucesso'=>true]);});
+
 Route::get('/cliente', [ClienteController::class, 'indexCliente']);
 Route::get('/cliente/{id}', [ClienteController::class, 'showCliente']);
-Route::get('/cliente', [ClienteController::class, 'storeCliente']);
-Route::get('/cliente/{id}', [ClienteController::class, 'updateCliente']);
-Route::get('/cliente/{id}', [ClienteController::class, 'destroyCliente']);
+Route::post('/cliente', [ClienteController::class, 'storeCliente']);
+Route::put('/cliente/{id}', [ClienteController::class, 'updateCliente']);
+Route::delete('/cliente/{id}', [ClienteController::class, 'destroyCliente']);
 
 // Vendas
 Route::get('/venda', [VendaController::class, 'indexCVenda']);
 Route::get('/venda/{id}', [VendaController::class, 'showVenda']);
-Route::get('/venda', [VendaController::class, "storeVenda"]);
-Route::get('/venda/{id}', [VendaController::class, 'updateVenda']);
-Route::get('/venda/{id}', [VendaController::class, 'destroyVenda']);
+Route::post('/venda', [VendaController::class, "storeVenda"]);
+Route::put('/venda/{id}', [VendaController::class, 'updateVenda']);
+Route::delete('/venda/{id}', [VendaController::class, 'destroyVenda']);
 
 // Perfumes
 Route::get('/perfume', [PerfumeController::class, "indexPerfume"]);
 Route::get('/perfume/{id}', [PerfumeController::class, "showPerfume"]);
-Route::get('/perfume', [PerfumeController::class, "storePerfume"]);
-Route::get('/perfume/{id}', [PerfumeController::class, "updatePerfume"]);
-Route::get('/perfume/{id}', [PerfumeController::class, "destroyPerfume"]);
+Route::post('/perfume', [PerfumeController::class, "storePerfume"]);
+Route::put('/perfume/{id}', [PerfumeController::class, "updatePerfume"]);
+Route::delete('/perfume/{id}', [PerfumeController::class, "destroyPerfume"]);

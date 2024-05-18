@@ -35,7 +35,10 @@ class ClienteController extends Controller
         ]);
 
         if ($validacao->fails()) {
-            return 'Dados inválidos' . $validacao->error(true) . 500;
+            return response()->json([
+                'message' => 'Dados inválidos',
+                'errors' => $validacao->errors()
+            ], 500);
         }
 
         $cadastro = Cliente::create($clientes);
