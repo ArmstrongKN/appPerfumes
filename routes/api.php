@@ -26,7 +26,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Clientes
 route::get('/', function(){return response()->json(['Sucesso'=>true]);});
-
 Route::get('/cliente', [ClienteController::class, 'indexCliente']);
 Route::get('/cliente/{id}', [ClienteController::class, 'showCliente']);
 Route::post('/cliente', [ClienteController::class, 'storeCliente']);
@@ -34,7 +33,7 @@ Route::put('/cliente/{id}', [ClienteController::class, 'updateCliente']);
 Route::delete('/cliente/{id}', [ClienteController::class, 'destroyCliente']);
 
 // Vendas
-Route::get('/venda', [VendaController::class, 'indexCVenda']);
+Route::get('/venda', [VendaController::class, 'indexVenda']);
 Route::get('/venda/{id}', [VendaController::class, 'showVenda']);
 Route::post('/venda', [VendaController::class, "storeVenda"]);
 Route::put('/venda/{id}', [VendaController::class, 'updateVenda']);

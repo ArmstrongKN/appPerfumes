@@ -1,7 +1,55 @@
+[[_TOC_]]
+
+### Aplicação de perfumaria
 <h1> Aplicação de perfumaria </h1>
 
-<h3> Diagrama MER </h3>
-<img src="{{ asset('readme/MER.png') }}" width="400" alt="Laravel Logo">
+<h3> Diagrama MER: </h3>
+<img src="public/readme/demonstrativo/MER.png" width="400">
+
+<h3> Teste de conectividade da API </h3>
+<img src="public/readme/demonstrativo/conexao.png" width="400">
+
+<h3> Clientes: </h3>
+<h5> Buscar </h5>
+<img src="public/readme/cliente/indexCliente.png" width="400">
+<h5> Selecionar </h5>
+<img src="public/readme/cliente/showCliente.png" width="400">
+<h5> Criar </h5>
+<img src="public/readme/cliente/storeCliente.png" width="400">
+<h5> Atualizar </h5>
+<img src="public/readme/cliente/updateCliente.png" width="400">
+<h5> Atualizado </h5>
+<img src="public/readme/cliente/updatedCliente.png" width="400">
+<h5> Excluir </h5>
+<img src="public/readme/cliente/destroyCliente.png" width="400">
+
+<h3> Vendas: </h3>
+<h5> Buscar </h5>
+<img src="public/readme/venda/indexVenda.png" width="400">
+<h5> Selecionar </h5>
+<img src="public/readme/venda/showVenda.png" width="400">
+<h5> Criar </h5>
+<img src="public/readme/venda/storeVenda.png" width="400">
+<h5> Atualizar </h5>
+<img src="public/readme/venda/updateVenda.png" width="400">
+<h5> Vemda atualizada </h5>
+<img src="public/readme/venda/updatedVenda.png" width="400">
+<h5> Excluir </h5>
+<img src="public/readme/venda/destroyVenda.png" width="400">
+
+<h3> Perfumes: </h3>
+<h5> Buscar </h5>
+<img src="public/readme/perfume/indexPerfume.png" width="400">
+<h5> Selecionar </h5>
+<img src="public/readme/perfume/showPerfume.png" width="400">
+<h5> Criar </h5>
+<img src="public/readme/perfume/storePerfume.png" width="400">
+<h5> Atualizar </h5>
+<img src="public/readme/perfume/updatePerfume.png" width="400">
+<h5> Perfume atualizado </h5>
+<img src="public/readme/perfume/updatedPerfume.png" width="400">
+<h5> Excluir </h5>
+<img src="public/readme/perfume/destroyPerfume.png" width="400">
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

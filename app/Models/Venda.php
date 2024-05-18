@@ -14,6 +14,6 @@ class Venda extends Model
         'data',
         'quantidade',
         'fkComprador_idCli',
-        'fkPerfume_idCPerf'
+        'fkPerfume_codPerf'
     ];
 }

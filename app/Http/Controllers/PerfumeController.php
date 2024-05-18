@@ -18,7 +18,7 @@ class PerfumeController extends Controller
 
         $contador = $perfumes->count();
 
-        return 'N° de Clientes: ' . $contador . '<br>' .  $perfumes . Response()->json([], Response::HTTP_NO_CONTENT);
+        return 'N° de Perfumes: ' . $contador . '<br>' .  $perfumes . Response()->json([], Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -65,9 +65,9 @@ class PerfumeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updatePerfumes(Request $request, string $id)
+    public function updatePerfume(Request $request, string $id)
     {
-        $perfumes = $request->all();
+        $perfumes = $request->All();
 
         $validacao = Validator::make($perfumes, [
             'marca' =>  'required',
@@ -77,22 +77,26 @@ class PerfumeController extends Controller
         ]);
 
         if ($validacao->fails()) {
-            return 'Dados inválidos' . $validacao->error(true) . 500;
+            return response()->json([
+                'message' => 'Dados inválidos',
+                'errors' => $validacao->errors()
+            ], 500);
         }
 
         $alteracao = Perfume::find($id);
+
+        if (!$alteracao) {
+            return 'Perfume não encontrado' . Response()->json([], Response::HTTP_BAD_REQUEST);
+        }
+
         $alteracao->marca = $perfumes['marca'];
         $alteracao->fragancia = $perfumes['fragancia'];
         $alteracao->mL = $perfumes['mL'];
         $alteracao->descricao = $perfumes['descricao'];
 
-        $retorno = $alteracao->save();
+        $alteracao->save();
 
-        if ($retorno) {
-            return 'Perfume modificado com sucesso ' . Response()->json([], Response::HTTP_NO_CONTENT);
-        } else {
-            return 'Perfume não modificado ' . Response()->json([], Response::HTTP_NO_CONTENT);
-        }
+        return 'Perfume modificado com sucesso ' . Response()->json([], Response::HTTP_NO_CONTENT);
     }
 
     /**

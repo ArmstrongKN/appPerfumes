@@ -37,7 +37,10 @@ class VendaController extends Controller
         ]);
 
         if ($validacao->fails()) {
-            return 'Dados inválidos' . $validacao->error(true) . 500;
+            return response()->json([
+                'message' => 'Dados inválidos',
+                'errors' => $validacao->errors()
+            ], 500);
         }
 
         $cadastro = Venda::create($vendas);
@@ -68,7 +71,7 @@ class VendaController extends Controller
      */
     public function updateVenda(Request $request, string $id)
     {
-        $vendas = $request->all();
+        $vendas = $request->All();
 
         $validacao = Validator::make($vendas, [
             'vendedor' =>  'required',
